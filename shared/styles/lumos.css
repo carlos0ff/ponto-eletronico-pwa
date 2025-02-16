@@ -1,0 +1,573 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* ==================== */
+/*   Variáveis Globais  */
+/* ==================== */
+:root { 
+  --color-background-white:#FFFFFF;
+  --color-background-light:#F8F9FA;
+  --color-background-gray: #E5E5E5; 
+  --color-background-blue: #E6F7FF; 
+  --color-background-green:#E6FFEC;
+
+  /* Color Gray */
+  --color-gray-50:  #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  /* Color Neutral */
+  --color-neutral-50:  #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  /* Color Stone */
+  --color-stone-50:  #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  --color-stone-950: #0c0a09;
+
+  /* Color Red */
+  --color-red-50:  #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+
+  /* Color Orange */
+  --color-orange-50:  #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
+
+  /* Color Yellow */
+  --color-yellow-50:  #fffde7;
+  --color-yellow-100: #fff9c4;
+  --color-yellow-200: #fff59d;
+  --color-yellow-300: #fff176;
+  --color-yellow-400: #ffee58;
+  --color-yellow-500: #ffeb3b;
+  --color-yellow-600: #fdd835;
+  --color-yellow-700: #fbc02d;
+  --color-yellow-800: #f9a825;
+  --color-yellow-900: #f57f17;
+  --color-yellow-950: #f57c00;
+
+  /* Color Green */
+  --color-green-50:  #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
+
+  /* Color Emerald */
+  --color-emerald-50:  #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+  --color-emerald-950: #022c22;
+
+  /* Color Teal */
+  --color-teal-50:  #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+  --color-teal-950: #042f2e;
+
+  /* Color Cyan */
+  --color-cyan-50:  #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
+  --color-cyan-950: #083344;
+
+  /* Color Sky */
+  --color-sky-50:  #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+  --color-sky-950: #082f49;
+
+  /* Color Blue */
+  --color-blue-50:  #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
+
+  /* Color Indigo */
+  --color-indigo-50:  #eef2ff;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-200: #c7d2fe;
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #3730a3;
+  --color-indigo-900: #312e81;
+  --color-indigo-950: #1e1b4b;
+
+  /* Color Violet */
+  --color-violet-50:  #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-300: #c4b5fd;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  --color-violet-800: #5b21b6;
+  --color-violet-900: #4c1d95;
+  --color-violet-950: #2e1065;
+
+  /* Color Purple */
+  --color-purple-50:  #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-300: #d8b4fe;
+  --color-purple-400: #c084fc;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-purple-800: #6b21a8;
+  --color-purple-900: #581c87;
+  --color-purple-950: #3b0764;
+
+  /* Color Fuchsia */
+  --color-fuchsia-50:  #fdf4ff;
+  --color-fuchsia-100: #fae8ff;
+  --color-fuchsia-200: #f5d0fe;
+  --color-fuchsia-300: #f0abfc;
+  --color-fuchsia-400: #e879f9;
+  --color-fuchsia-500: #d946ef;
+  --color-fuchsia-600: #c026d3;
+  --color-fuchsia-700: #a21caf;
+  --color-fuchsia-800: #86198f;
+  --color-fuchsia-900: #701a75;
+  --color-fuchsia-950: #4a044e;
+
+  /* Color Pink */
+  --color-pink-50:  #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
+  --color-pink-950: #500724;
+
+  /* Color Rose */
+  --color-rose-50:  #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-300: #fda4af;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-rose-700: #be123c;
+  --color-rose-800: #9f1239;
+  --color-rose-900: #881337;
+  --color-rose-950: #4c0519;
+
+  /* Backgrounds Gradients */
+  --linear-gradient-color-blue: linear-gradient(to right, var(--color-blue-50), var(--color-blue-500), var(--color-blue-900));
+  --linear-gradient-color-indigo: linear-gradient(to right, var(--color-indigo-50), var(--color-indigo-500), var(--color-indigo-900));
+  --linear-gradient-color-purple: linear-gradient(to right, var(--color-purple-50), var(--color-purple-500), var(--color-purple-900));
+  --linear-gradient-color-pink: linear-gradient(to right, var(--color-pink-50), var(--color-pink-500), var(--color-pink-900));
+  --linear-gradient-color-rose: linear-gradient(to right, var(--color-rose-50), var(--color-rose-500), var(--color-rose-900));
+  --linear-gradient-color-cyan: linear-gradient(to right, var(--color-cyan-50), var(--color-cyan-500), var(--color-cyan-900));
+  --linear-gradient-color-sky: linear-gradient(to right, var(--color-sky-50), var(--color-sky-500), var(--color-sky-900));
+  --linear-gradient-color-teal: linear-gradient(to right, var(--color-teal-50), var(--color-teal-500), var(--color-teal-900));
+  --linear-gradient-color-green: linear-gradient(to right, var(--color-green-50), var(--color-green-500), var(--color-green-900));
+  --linear-gradient-color-lime:  linear-gradient(to right, var(--color-lime-50), var(--color-lime-500), var(--color-lime-900));
+  --linear-gradient-color-yellow: linear-gradient(to right, var(--color-yellow-50), var(--color-yellow-500), var(--color-yellow-900));
+  --linear-gradient-color-orange:  linear-gradient(to right, var(--color-orange-50), var(--color-orange-500), var(--color-orange-900));
+  --linear-gradient-color-red:  linear-gradient(to right, var(--color-red-50), var(--color-red-500), var(--color-red-900));
+  --linear-gradient-color-gray: linear-gradient(to right, var(--color-gray-50), var(--color-gray-500), var(--color-gray-900));
+
+  /* Transitions */
+  --transition-duration: 0.3s;
+  --transition-delay: 0s;
+  --transition-property: all;
+
+  --transition-timing-function: ease-in-out;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --padding-horizontal: 2rem; 
+  --padding-vertical: 1rem; 
+  --font-size: 1.5rem;
+
+  /* Base Styles */
+  --btn-padding: 0.75rem 1.25rem;
+  --btn-radius: 0.375rem;
+  --btn-font-size: 1rem;
+  --btn-font-weight: 600;
+  --btn-transition: 0.2s ease-in-out;
+}
+
+/* Estilos gerais */
+*,
+*::before,
+*::after { 
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+}
+
+html, body{ 
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  color: var(--color-gray-950);
+  background-color: var(--color-background-white);
+  height: 100vh; 
+}
+
+
+
+
+
+.text-danger{
+  color: #D94452;
+}
+
+.text-success{
+  color: #1AB394;
+}
+
+
+
+/* ====================== */
+/*   Classes Utilitárias  */
+/* ====================== */
+
+/* Margens */
+.m-0 { margin: 0 !important; }
+.mt-0 { margin-top: 0 !important; }
+.mr-0 { margin-right: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.ml-0 { margin-left: 0 !important; }
+.my-0 { margin-top: 0 !important; margin-bottom: 0 !important; }
+.mx-0 { margin-left: 0 !important; margin-right: 0 !important; }
+
+.m-1 { margin: 0.75rem !important; }
+.mt-1 { margin-top: 0.75rem !important; }
+.mr-1 { margin-right: 0.75rem !important; }
+.mb-1 { margin-bottom: 0.75rem !important; }
+.ml-1 { margin-left: 0.75rem !important; }
+.my-1 { margin-top: 0.75rem !important; margin-bottom: 0.75rem !important; }
+.mx-1 { margin-left: 0.75rem !important; margin-right: 0.75rem !important; }
+
+.m-2 { margin: 1.5rem !important; }
+.mt-2 { margin-top: 1.5rem !important; }
+.mr-2 { margin-right: 1.5rem !important; }
+.mb-2 { margin-bottom: 1.5rem !important; }
+.ml-2 { margin-left: 1.5rem !important; }
+.my-2 { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
+.mx-2 { margin-left: 1.5rem !important; margin-right: 1.5rem !important; }
+
+.m-3 { margin: 3rem !important; }
+.mt-3 { margin-top: 3rem !important; }
+.mr-3 { margin-right: 3rem !important; }
+.mb-3 { margin-bottom: 3rem !important; }
+.ml-3 { margin-left: 3rem !important; }
+.my-3 { margin-top: 3rem !important; margin-bottom: 3rem !important; }
+.mx-3 { margin-left: 3rem !important; margin-right: 3rem !important; }
+
+.m-4 { margin: 4.5rem !important; }
+.mt-4 { margin-top: 4.5rem !important; }
+.mr-4 { margin-right: 4.5rem !important; }
+.mb-4 { margin-bottom: 4.5rem !important; }
+.ml-4 { margin-left: 4.5rem !important; }
+.my-4 { margin-top: 4.5rem !important; margin-bottom: 4.5rem !important; }
+.mx-4 { margin-left: 4.5rem !important; margin-right: 4.5rem !important; }
+
+.m-5 { margin: 9rem !important; }
+.mt-5 { margin-top: 9rem !important; }
+.mr-5 { margin-right: 9rem !important; }
+.mb-5 { margin-bottom: 9rem !important; }
+.ml-5 { margin-left: 9rem !important; }
+.my-5 { margin-top: 9rem !important; margin-bottom: 9rem !important; }
+.mx-5 { margin-left: 9rem !important; margin-right: 9rem !important; }
+
+.m-auto { margin: auto !important; }
+.mt-auto { margin-top: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
+.my-auto { margin-top: auto !important; margin-bottom: auto !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* Paddings */
+.p-0 { padding: 0 !important; }
+.pt-0 { padding-top: 0 !important; }
+.pr-0 { padding-right: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
+.pl-0 { padding-left: 0 !important; }
+.py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
+.px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+
+.p-1 { padding: 0.75rem !important; }
+.pt-1 { padding-top: 0.75rem !important; }
+.pr-1 { padding-right: 0.75rem !important; }
+.pb-1 { padding-bottom: 0.75rem !important; }
+.pl-1 { padding-left: 0.75rem !important; }
+.py-1 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+.px-1 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+
+.p-2 { padding: 1.5rem !important; }
+.pt-2 { padding-top: 1.5rem !important; }
+.pr-2 { padding-right: 1.5rem !important; }
+.pb-2 { padding-bottom: 1.5rem !important; }
+.pl-2 { padding-left: 1.5rem !important; }
+.py-2 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+.px-2 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+
+.p-3 { padding: 3rem !important; }
+.pt-3 { padding-top: 3rem !important; }
+.pr-3 { padding-right: 3rem !important; }
+.pb-3 { padding-bottom: 3rem !important; }
+.pl-3 { padding-left: 3rem !important; }
+.py-3 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.px-3 { padding-left: 3rem !important; padding-right: 3rem !important; }
+
+.p-4 { padding: 4.5rem !important; }
+.pt-4 { padding-top: 4.5rem !important; }
+.pr-4 { padding-right: 4.5rem !important; }
+.pb-4 { padding-bottom: 4.5rem !important; }
+.pl-4 { padding-left: 4.5rem !important; }
+.py-4 { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+.px-4 { padding-left: 4.5rem !important; padding-right: 4.5rem !important; }
+
+.p-5 { padding: 9rem !important; }
+.pt-5 { padding-top: 9rem !important; }
+.pr-5 { padding-right: 9rem !important; }
+.pb-5 { padding-bottom: 9rem !important; }
+.pl-5 { padding-left: 9rem !important; }
+.py-5 { padding-top: 9rem !important; padding-bottom: 9rem !important; }
+.px-5 { padding-left: 9rem !important; padding-right: 9rem !important; }
+
+.p-auto { padding: auto !important; }
+.pt-auto { padding-top: auto !important; }
+.pr-auto { padding-right: auto !important; }
+.pb-auto { padding-bottom: auto !important; }
+.pl-auto { padding-left: auto !important; }
+.py-auto { padding-top: auto !important; padding-bottom: auto !important; }
+.px-auto { padding-left: auto !important; padding-right: auto !important; }
+
+/* ====================== */
+/*   Classes de Display   */
+/* ====================== */
+
+/* CARDS */
+.card {
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.card-body { 
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  width: 100%; 
+}
+
+.card-title {
+
+  font-size: 1.25rem; 
+  font-weight: 600;
+  color: var(--color-gray-900); 
+}
+
+.card-text { 
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.text-muted {
+  color: #A8AFBD;
+}
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+/** Displays */
+.d-none{ display: none; }
+.d-table{ display: table; }
+.d-table-cell{ display: table-cell; }
+.d-table-column{ display: table-column; }
+.d-inline{ display: inline; }
+
+.d-flex{
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.d-grid{ 
+  display: -moz-grid;
+  display: grid;
+  gap: 0.938rem; 
+}
+
+/** Flexbox */
+
+/* Colunas padrão */
+.col-1 { grid-template-columns: repeat(1, 1fr); }
+.col-2 { grid-template-columns: repeat(2, 1fr); }
+.col-3 { grid-template-columns: repeat(3, 1fr); }
+.col-4 { grid-template-columns: repeat(4, 1fr); }
+.col-5 { grid-template-columns: repeat(5, 1fr); }
+.col-6 { grid-template-columns: repeat(6, 1fr); }
+.col-7 { grid-template-columns: repeat(7, 1fr); }
+.col-8 { grid-template-columns: repeat(8, 1fr); }
+.col-9 { grid-template-columns: repeat(9, 1fr); }
+.col-10 { grid-template-columns: repeat(10, 1fr); }
+.col-11 { grid-template-columns: repeat(11, 1fr); }
+.col-12 { grid-template-columns: repeat(12, 1fr); }
+
+/* Span de colunas */
+.span-1 { grid-column: span 1; }
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; }
+.span-6 { grid-column: span 6; }
+.span-7 { grid-column: span 7; }
+.span-8 { grid-column: span 8; }
+.span-9 { grid-column: span 9; }
+.span-10 { grid-column: span 10; }
+.span-11 { grid-column: span 11; }
+.span-12 { grid-column: span 12; }
+
+/* Responsividade: Tablets */
+@media screen and (max-width: 992px) {
+  .col-md-1 { grid-template-columns: repeat(1, 1fr); }
+  .col-md-2 { grid-template-columns: repeat(2, 1fr); }
+  .col-md-3 { grid-template-columns: repeat(3, 1fr); }
+  .col-md-4 { grid-template-columns: repeat(4, 1fr); }
+  .col-md-5 { grid-template-columns: repeat(5, 1fr); }
+  .col-md-6 { grid-template-columns: repeat(6, 1fr); }
+  .col-md-7 { grid-template-columns: repeat(7, 1fr); }
+  .col-md-8 { grid-template-columns: repeat(8, 1fr); }
+  .col-md-9 { grid-template-columns: repeat(9, 1fr); }
+  .col-md-10 { grid-template-columns: repeat(10, 1fr); }
+  .col-md-11 { grid-template-columns: repeat(11, 1fr); }
+  .col-md-12 { grid-template-columns: repeat(12, 1fr); }
+
+  .med-span-1 { grid-column: span 1; }
+  .med-span-2 { grid-column: span 2; }
+  .med-span-3 { grid-column: span 3; }
+  .med-span-4 { grid-column: span 4; }
+  .med-span-5 { grid-column: span 5; }
+  .med-span-6 { grid-column: span 6; }
+  .med-span-7 { grid-column: span 7; }
+  .med-span-8 { grid-column: span 8; }
+  .med-span-9 { grid-column: span 9; }
+  .med-span-10 { grid-column: span 10; }
+  .med-span-11 { grid-column: span 11; }
+  .med-span-12 { grid-column: span 12; }
+}
+
+/* Responsividade: Celulares */
+@media screen and (max-width: 576px) {
+  .col-sm-1 { grid-template-columns: repeat(1, 1fr); }
+  .col-sm-2 { grid-template-columns: repeat(2, 1fr); }
+  .col-sm-3 { grid-template-columns: repeat(3, 1fr); }
+  .col-sm-4 { grid-template-columns: repeat(4, 1fr); }
+  .col-sm-5 { grid-template-columns: repeat(5, 1fr); }
+  .col-sm-6 { grid-template-columns: repeat(6, 1fr); }
+  .col-sm-7 { grid-template-columns: repeat(7, 1fr); }
+  .col-sm-8 { grid-template-columns: repeat(8, 1fr); }
+  .col-sm-9 { grid-template-columns: repeat(9, 1fr); }
+  .col-sm-10 { grid-template-columns: repeat(10, 1fr); }
+  .col-sm-11 { grid-template-columns: repeat(11, 1fr); }
+  .col-sm-12 { grid-template-columns: repeat(12, 1fr); }
+}
